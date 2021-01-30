@@ -56,21 +56,21 @@ export default class InterestForm extends Component {
             <div>
                 <h2>Interest</h2>
 
-                <Form>
-                    <Form.Field label = 'Cost Requirement' control='select'>
+                <Form onSubmit={this.handleSubmit}>
+                    <Form.Field label = 'Cost Requirement' control='select' value={this.state.cost} onChange={this.onChangeCost}>
                         <option>$5-$10</option>
                         <option>$10-$15</option>
                         <option>$15-$20</option>
                     </Form.Field>
                     <Form.Field>
                         <label>Location</label>
-                        <input placeholder='Location' />
+                        <input value={this.state.location} onChange={this.onChangeLocation} placeholder='Location' />
                     </Form.Field>
-                    <Form.Field label = 'Quality' control='select'>
+                    <Form.Field label = 'Quality' control='select' value={this.state.quality} onChange={this.onChangeQuality}>
                         <option>Low</option>
                         <option>High</option>
                     </Form.Field>
-                    <Form.Field label = 'Type' control='select'>
+                    <Form.Field label = 'Type' control='select' value={this.state.quantity} onChange={this.onChangeQuantity}>
                         <option>Vegetarian</option>
                         <option>Chinese</option>
                         <option>Indian</option>

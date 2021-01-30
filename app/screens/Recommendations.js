@@ -13,11 +13,9 @@ export class Recommendations extends Component {
                     </Card.Content>
                     
                     <Card.Content extra>
-                        <div className='ui two buttons'>
                         <Button basic color='green'>
                             Order Now
                         </Button>
-                        </div>
                     </Card.Content>
 
                 </Card>

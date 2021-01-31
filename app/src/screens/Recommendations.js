@@ -1,26 +1,46 @@
 import React, { Component } from 'react';
-import { Card,Image } from 'semantic-ui-react';
-import { Button, Form } from 'semantic-ui-react';
+import RecCard from '../components/RecCard';
 
 export class Recommendations extends Component {
     render() {
         return (
-            <div>
-            <Card.Group>
-                <Card>
-                    <Image/>
-                    <Card.Content>
-                        <h3>Info about the food</h3>
-                    </Card.Content>
-                    
-                    <Card.Content extra>
-                        <Button basic color='green'>
-                            Order Now
-                        </Button>
-                    </Card.Content>
-
-                </Card>
-            </Card.Group>
+            <div className="rec">
+                <h2>Here is a list of our resataurants meal recommendations</h2>
+                <RecCard
+                className="rec__foods" 
+                foodName='lassangne' 
+                image='https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made.jpg'
+                storeName = 'Store A'
+                price = '15'
+                deliveryTime = '5 minutes'/>
+                <RecCard
+                className="rec__foods" 
+                foodName='lassangne' 
+                image='https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made.jpg'
+                storeName = 'Store B'
+                price = '15'
+                deliveryTime = '3 minutes'/>
+                <RecCard
+                className="rec__foods" 
+                foodName='lassangne' 
+                image='https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made.jpg'
+                storeName = 'Store C'
+                price = '15'
+                deliveryTime = '3 minutes'/>
+                <RecCard
+                className="rec__foods" 
+                foodName='lassangne' 
+                image='https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made.jpg'
+                storeName = 'Store D'
+                price = '15'
+                deliveryTime = '1 minutes'/>
+                <RecCard
+                className="rec__foods" 
+                foodName='lassangne' 
+                image='https://www.foodiesfeed.com/wp-content/uploads/2019/06/top-view-for-box-of-2-burgers-home-made.jpg'
+                storeName = 'Store A'
+                price = '15'
+                deliveryTime = '6 minutes'/>
             </div>
         )
     }

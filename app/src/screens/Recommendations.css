@@ -1,0 +1,16 @@
+.rec {
+    flex: .8;
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    padding-bottom: 0;
+}
+
+.rec > h2 {
+    margin-left: 5px;
+    margin-bottom: 20px;
+}
+
+.rec__foods {
+    display: flex;
+    flex-wrap: wrap;
+}

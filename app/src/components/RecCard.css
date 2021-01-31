@@ -1,0 +1,31 @@
+.food {
+    width: 250px;
+    margin-bottom: 40px;
+}
+
+.food__thumbnail {
+    height: 120px;
+    width: 180px;
+}
+
+.food__info {
+    display: flex;
+    margin-top: 10px;
+    padding-right: 30px;
+}
+
+.food__text {
+    margin-left: 15px;
+
+}
+
+.food__text > h4 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.food__text > p {
+    font-size: 14px;
+    color: gray;
+}
+

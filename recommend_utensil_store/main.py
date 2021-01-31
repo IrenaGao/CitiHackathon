@@ -1,7 +1,7 @@
 """ This script is used to find the top choices utensil store
 """
 from data import stores
-from algorithm import ranking
+import algorithm
 import logging
 
 logger = logging.getLogger(__name__)
@@ -24,7 +24,7 @@ def main(**restaurant_info):
         print(f'Restaurant Name: {name}')
         print('Your restaurant is using recyclable materials!')
     else:
-        results, store_info = ranking(loc=location, usage=bag_daily_usage)
+        results, store_info = algorithm.ranking(loc=location, usage=bag_daily_usage)
         print(f'Restaurant Name: {name}')
         print('You are suggest to use recyclable materials, '
               'possible stores are as follows:')
@@ -43,5 +43,5 @@ def main(**restaurant_info):
 if __name__ == '__main__':
     main(name='Good_Restaurant',
          location=(40, 30),
-         carryout_bag='plastic',
-         bag_daily_usage=500)
+         bag_material='plastic',
+         bag_usage=500)

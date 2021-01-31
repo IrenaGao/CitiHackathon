@@ -16,8 +16,8 @@ def ranking(**info):
     """
     logger.info("Ranking the possible stores")
     results, store_info = metric(info['loc'], info['usage'])
-    results = dict(sorted(results.items(), key=lambda x: x[1]))
-    return results[:3], store_info
+    results = sorted(results.items(), key=lambda x: x[1])
+    return dict(results[:3]), store_info
 
 
 def metric(rest_loc, rest_usage):
@@ -27,7 +27,8 @@ def metric(rest_loc, rest_usage):
     logger.info("Calculating metrics")
     results = {}
     store_info = {}
-    for store in stores:
+    for s in stores.keys():
+        store = stores[s]
         store_loc = store['location']
         dist = distance(store_loc, rest_loc)
         supply = min(0, 30 - store['storage'] / rest_usage)
@@ -36,11 +37,12 @@ def metric(rest_loc, rest_usage):
         metric = ARRIVAL_TIME_WEIGHT* arr_time + SUPPLY_WEIGHT* supply \
                 + DISTANCE_WEIGHT* dist + BAG_COST_WEIGHT* bag_cost
 
-        results[store] = metric
-        store_info[store]['dist'] = dist
-        store_info[store]['days'] = store['storage'] / rest_usage
-        store_info[store]['duration'] = store['delivery duration']
-        store_info[store]['price'] = store['price']
+        results[s] = metric
+        store_info[s] = {}
+        store_info[s]['dist'] = dist
+        store_info[s]['days'] = store['storage'] / rest_usage
+        store_info[s]['duration'] = store['delivery duration']
+        store_info[s]['price'] = store['price']
 
     return results, store_info
 

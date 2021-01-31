@@ -4,6 +4,7 @@ import NumericInput from 'react-numeric-input';
 import _ from 'lodash';
 import faker from 'faker';
 import states from '../data/states.json';
+import NavBar from './NavBar';
 
 const state = [
     
@@ -77,6 +78,8 @@ export default class InterestForm extends Component {
 
     render() {
         return (
+            <div>
+                <NavBar/>
             <div style={{backgroundColor: 'white', paddingBottom: '4%', width: '80%', marginLeft: '10%', borderRadius: '20px', boxShadow: '5px 5px 10px #555555'}}>
                 <p style={{marginTop: '5%', paddingTop: '6%', fontSize: '25px', marginBottom: '4%', textAlign: 'center'}}>What qualities are you looking for in a distributor?</p>
                 <Form onSubmit={this.handleSubmit} style={{marginLeft: '25%'}}>
@@ -106,6 +109,7 @@ export default class InterestForm extends Component {
                     <input style={{marginLeft: '20%', marginTop: '5%', display: 'block', backgroundColor: '#94B0DA', borderColor: '#94B0DA', borderRadius: '12px', padding: '12px', color: 'white'}} type='submit' value='Compute my Recommendations!' />
                 </Form>
               
+            </div>
             </div>
         )};
 }

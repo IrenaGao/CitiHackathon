@@ -1,9 +1,12 @@
 import React from 'react'
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import NavBar from './NavBar';
 
 function Dashboard(props) {
     return(
+        <div>
+        <NavBar/>
         <div style={{marginTop: '5%'}}>
             Here are some recommended distributors based on your restaurant's qualities:
             <Card style={{width: '35%', marginLeft: '33%', marginTop: '3%'}}>
@@ -17,6 +20,7 @@ function Dashboard(props) {
                     <p>Products sold: </p>
                 </CardContent>
             </Card>
+        </div>
         </div>
     )
 }

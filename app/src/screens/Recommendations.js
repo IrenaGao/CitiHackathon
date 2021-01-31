@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import RecCard from '../components/RecCard';
+import NavBar from './NavBar';
 
 export class Recommendations extends Component {
     render() {
         return (
+            <div>
+            <NavBar/>
             <div className="rec">
                 <h2>Here is a list of our resataurants meal recommendations</h2>
                 <RecCard
@@ -41,6 +44,7 @@ export class Recommendations extends Component {
                 storeName = 'Store A'
                 price = '15'
                 deliveryTime = '6 minutes'/>
+            </div>
             </div>
         )
     }

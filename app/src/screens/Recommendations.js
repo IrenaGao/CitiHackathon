@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Card,Image } from 'semantic-ui-react'
+import { Card,Image } from 'semantic-ui-react';
+import { Button, Form } from 'semantic-ui-react';
 
 export class Recommendations extends Component {
     render() {

@@ -1,6 +1,6 @@
 """ This script is used to run the algorithm
 to find match utensil stores """
-from main import logger
+import main
 from data import stores
 from math import sin, cos, sqrt, atan2, radians
 
@@ -14,7 +14,7 @@ def ranking(**info):
     """ rank the possible results
     by the defined metrics
     """
-    logger.info("Ranking the possible stores")
+    main.logger.info("Ranking the possible stores")
     results, store_info = metric(info['loc'], info['usage'])
     results = sorted(results.items(), key=lambda x: x[1])
     return dict(results[:3]), store_info
@@ -24,7 +24,7 @@ def metric(rest_loc, rest_usage):
     """ a score used to evaluate the best
     utensil store for restaurant
     """
-    logger.info("Calculating metrics")
+    main.logger.info("Calculating metrics")
     results = {}
     store_info = {}
     for s in stores.keys():

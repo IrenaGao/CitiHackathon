@@ -14,7 +14,7 @@ from flask import Flask
 from flask import request
 from flask import jsonify
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../build', static_url_path='/')
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(format='%(asctime)s - %(message)s', level=logging.INFO)
@@ -144,9 +144,14 @@ def returnRecs2():
     time.sleep(4)
     return {'recommendations2': recommendations2}
 
+@app.route('/')
+def index():
+    return app.send_static_file('index.html')
+
+@app.errorhandler(404)
+def not_found(e):
+    return app.send_static_file('index.html')
+
 if __name__ == '__main__':
-    # main(name='Good_Restaurant',
-    #      location=(40, 30),
-    #      bag_material='plastic',
-    #      bag_usage=500)
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 80))
+    # app.run(debug=True)

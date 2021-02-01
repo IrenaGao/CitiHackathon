@@ -109,8 +109,6 @@ export class Recommendations extends Component {
     }
 
     render() {
-        console.log("hi");
-        console.log(this.state.allutensils);
         return (
             <div>
             {/* <NavBar/> */}

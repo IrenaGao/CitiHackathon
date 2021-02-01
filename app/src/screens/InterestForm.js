@@ -106,7 +106,6 @@ export default class InterestForm extends Component {
         axios.post('/result', {
             event : order
         }).then(function(response) {
-            console.log("axios successful 1");
             console.log(response);
         }).catch(function(error) {
             console.log(error.response.data);
